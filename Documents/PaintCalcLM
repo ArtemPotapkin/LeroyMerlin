@@ -1,0 +1,49 @@
+
+print("Добро пожаловать в калькулятор краски")
+
+
+R = int(input("Введите количество комнат "))
+
+
+if R == 1:
+    SR = float(input("Площадь помещения "))
+    HR = float(input("Высота потолка "))
+
+    PRoom = SR * HR
+
+    SDoor = 2
+    HowMuchDoor = int(input("Количество дверей "))
+
+    PDoor = SDoor * HowMuchDoor
+
+
+    Window = float(input("Введите пожалуйста площадь окна "))
+
+    SWall = PRoom - (PDoor + Window)
+
+    VPaint = SWall / 10 * 2
+
+    print(VPaint)
+
+else:
+
+    SR = float(input("Площадь по полу ")) * 1.2
+    HR = float(input("Высота потолка "))
+
+
+    PRoom = SR * HR
+
+    SDoor = 2
+    HowMuchDoor = int(input("Количество дверей "))
+
+    PDoor = SDoor * HowMuchDoor
+
+
+    Window = float(input("Введите пожалуйста площадь окна "))
+
+    SWall = PRoom - (PDoor + Window)
+
+    VPaint = SWall / 10 * 2
+
+
+    print(VPaint)
