@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon May  6 20:31:17 2019
+
+@author: sh.elisaveta
+
+"""
+
+
+import bs4
+import requests
+
+h = requests.get('https://leroymerlin.ru/catalogue/kraski-dlya-sten-i-potolkov/?display=90')
+soup = bs4.BeautifulSoup(h.text)
+#a = soup.find_all("div", {"data-product-name = " : ""})
+
+b = soup.find_all("data-product-name=")
+print(b)
+    
+    
