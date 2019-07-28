@@ -12,10 +12,13 @@ import bs4
 import requests
 
 h = requests.get('https://leroymerlin.ru/catalogue/kraski-dlya-sten-i-potolkov/?display=90')
-soup = bs4.BeautifulSoup(h.text)
+with open('test.html', 'w', encoding='utf-8') as file_name:
+	file_name.write(h.text)
+
+soup = bs4.BeautifulSoup(h.text, features="html.parser")
 #a = soup.find_all("div", {"data-product-name = " : ""})
 
-b = soup.find_all("data-product-name=")
-print(b)
-    
-    
+b = soup.find_all(attrs={"data-product-name": True})
+for i in b:
+	print(i['data-product-id'], i['data-product-name'])
+#print(b)
